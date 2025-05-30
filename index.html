@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>WebRTC 360 Viewer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: black;
+    }
+    #ui {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 10000;
+      color: white;
+    }
+    input, button {
+      font-size: 1rem;
+    }
+  </style>
+  <script type="module" crossorigin src="/WebRTC_SKYWAY360/assets/index-ByIQOfB1.js"></script>
+</head>
+<body>
+  <div id="ui">
+    <input id="room-name" placeholder="Room name" />
+    <button id="join">Join</button>
+    <button id="leave">Leave</button>
+    <div id="my-id"></div>
+  </div>
+
+  <video id="local-video" muted autoplay playsinline style="display: none;"></video>
+  <div id="remote-media-area"></div>
+
+</body>
+</html>
