@@ -2,39 +2,52 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8" />
-  <title>WebRTC 360 Viewer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>WebRTC-SKYWAY</title>
   <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-      background: black;
+    #local-video {
+      width: 300px;
+      border: 1px solid #ccc;
     }
-    #ui {
-      position: absolute;
-      top: 10px;
-      left: 10px;
+    .field{
+      display: inline-block;
+      position: fixed;
       z-index: 10000;
-      color: white;
     }
-    input, button {
-      font-size: 1rem;
+    .field2{
+      position: relative;
+      top: 30px;
+      left: 30px;
     }
-  </style>
-  <script type="module" crossorigin src="/WebRTC-SKYWAY360/assets/index-ByIQOfB1.js"></script>
-</head>
-<body>
-  <div id="ui">
-    <input id="room-name" placeholder="Room name" />
-    <button id="join">Join</button>
-    <button id="leave">Leave</button>
-    <div id="my-id"></div>
-  </div>
 
-  <video id="local-video" muted autoplay playsinline style="display: none;"></video>
+  </style>
+  <script type="module" crossorigin src="/WebRTC-SKYWAY360/assets/index-CZ9O-Ik5.js"></script>
+</head>
+
+<body>
+<div class="field">
+  <label>
+    <input type="checkbox" id="is-sender" />
+    映像を送信
+  </label>
+
+  <label>
+    ルーム名：
+    <input type="text" id="room-name" placeholder="例: test-room" />
+  </label>
+
+  <button id="join">接続</button>
+  <button id="leave">切断</button>
+</div>
+
+<div class="field2">
+  <p>自分のID: <span id="my-id"></span></p>
+
+  <video id="local-video" autoplay muted playsinline></video>
+</div>
+
   <div id="remote-media-area"></div>
 
 </body>
 </html>
+
